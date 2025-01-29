@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from 'react'
 
 interface Drink {
@@ -66,7 +67,8 @@ export const DrinkList = ({data}: DrinksResponse) => {
       <hr className="my-6 w-3/4" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6 max-w-7xl">
         {data?.map((drink: Drink) => (
-          <div
+          <Link
+            href={`drinks/${drink.idDrink}`}
             key={drink.idDrink}
             className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300"
           >
@@ -80,7 +82,7 @@ export const DrinkList = ({data}: DrinksResponse) => {
             <div className="card-body text-center">
               <h5 className="card-title text-sm font-semibold">{drink.strDrink}</h5>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

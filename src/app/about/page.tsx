@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React from 'react'
 
-const About = () => {
+const About = async () => {
   return (
     <div>
       <h1>About</h1>
