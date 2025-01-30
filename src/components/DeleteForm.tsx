@@ -1,8 +1,16 @@
+import {deleteTask} from "@/utils/actions"
 import React from 'react'
 
-const DeleteForm = () => {
+interface ComponentDeleteFrom {
+  id: string
+}
+
+const DeleteForm = async ({id}: ComponentDeleteFrom) => {
   return (
-    <div>DeleteForm</div>
+    <form action={deleteTask}>
+      <input type="hidden" name="id" value={id} />
+      <button type="submit" className="btn btn-danger btn-xs">Delete</button>
+    </form>
   )
 }
 
