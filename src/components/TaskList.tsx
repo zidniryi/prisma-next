@@ -1,14 +1,10 @@
-import prisma from "@/utils/db"
 import Link from "next/link"
 import React from 'react'
 import DeleteForm from "./DeleteForm"
+import {getAllTask} from "@/utils/actions"
 
 const TaskList = async () => {
-  const tasks = await prisma.task.findMany({
-    orderBy: {
-      createdAt: "desc"
-    }
-  })
+  const tasks: any = await getAllTask()
   if (tasks.length > 0) {
     return (
       <ul className="mt-8 w-9/12">
