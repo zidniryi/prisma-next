@@ -1,9 +1,14 @@
+import TaskForm from "@/components/TaskForm"
+import TaskList from "@/components/TaskList"
 import React from 'react'
 
-const index = () => {
+const TasksPage = () => {
   return (
-    <div>index</div>
+    <div className="flex flex-col items-center  p-8">
+      <TaskForm />
+      <TaskList />
+    </div>
   )
 }
 
-export default index
+export default TasksPage
