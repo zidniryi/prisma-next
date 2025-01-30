@@ -1,4 +1,5 @@
 import prisma from "@/utils/db";
+import {revalidatePath} from "next/cache";
 import React from 'react'
 
 const createTask = async (form: FormData) => {
@@ -10,7 +11,7 @@ const createTask = async (form: FormData) => {
       content,
     }
   })
-
+  revalidatePath('/tasks')
 }
 
 const TaskForm = async () => {
